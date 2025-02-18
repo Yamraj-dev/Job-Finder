@@ -1,0 +1,25 @@
+<div class="container-fluid mt-3">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Contact</th>
+        <th scope="col">Resume</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% applicantsList.forEach(applicantsList=>{ %>
+      <tr>
+        <th scope="row"><%= applicantsList.id %></th>
+        <td><%= applicantsList.name %></td>
+        <td><%= applicantsList.email %></td>
+        <td><%= applicantsList.contact %></td>
+        <td>
+          <a class="btn btn-primary" href="/<%= applicantsList.resume %>" role="button">View</a>
+      </td>      
+    <% }); %>
+    </tbody>
+  </table>
+</div>

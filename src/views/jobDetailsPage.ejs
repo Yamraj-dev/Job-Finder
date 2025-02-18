@@ -1,0 +1,109 @@
+<div class="container mt-3">
+    <div class="card mb-3">
+        <a href="https://www.codingninjas.com/">
+            <img src="https://files.codingninjas.com/web-banner-28759.png" class="img-fluid card-img-top" alt="banner">
+        </a>
+        <div class="card-body">
+          <h1 class="text-center text-primary">
+            <span class="text-danger"><%= job.category %></span> Oppertunity in <span class="text-success"><%= job.locat %></span><span class="text-info"><%= job.companyName %></span>
+          </h1>
+          <h3 class="card-title invisible"><%= job.id %></h3>
+          <div class="container-fluid">
+            <div class="container-fluid d-flex justify-content-start p-0">
+              <div class="d-flex align-items-center border border-1 border-success-subtle rounded bg-warning p-2">
+                <h5 class="mb-0 text-success me-1">Actively hiring</h5>
+                <i class="fa-solid fa-arrow-trend-up ms-2 text-success"></i>
+              </div>
+              <% if(userEmail){ %>
+                <a href="">
+                  <i class="fa-solid fa-pen-to-square ms-2" style="color: #00d8f5; font-size: 20px;"></i>
+                </a>
+                <a href="">
+                  <i class="fa-regular fa-file-excel ms-2" style="color: #ff0000; font-size: 20px;"></i>
+                </a>
+              <% } %>
+            </div>
+            <h3 class="card-title mt-2"><%= job.companyName %></h3>
+            <p class="card-text"><%= job.category %> | <%= job.designation %></p>
+            <p class="card-text">
+              <i class="fa-solid fa-location-dot" style="color: #000000;"></i>
+              <%= job.locat %>
+            </p>
+            <p class="card-text">
+              <i class="fa-solid fa-indian-rupee-sign" style="color: #000000;"></i>
+              <%= job.salary %>
+            </p>
+            <p class="card-text">
+              <i class="fa-solid fa-suitcase" style="color: #000000;"></i>
+              Number of openings <%= job.openings %>
+            </p>
+            <% if(userEmail){ %>
+              <a href="/applicants" class="text-decoration-none">
+                <p class="card-text text-danger">
+                  <i class="fa-solid fa-users" style="color: #000000;"></i>
+                  Applicants <%= job.applicant %>
+                </p>
+              </a>
+            <% }else{ %>
+              <p class="card-text text-danger">
+                <i class="fa-solid fa-users" style="color: #000000;"></i>
+                Applicants <%= job.applicant %>
+              </p>
+            <% } %>
+            <% if (job.skills && job.skills.length > 0) { %>
+              <% job.skills.forEach(skill => { %>
+                <span class="badge bg-secondary me-1"><%= skill %></span>
+              <% }); %>
+            <% } else { %>
+              <p class="text-white">No Skills Required.</p>
+            <% } %>
+            <button type="button" class="btn btn-primary w-100 mt-3" style="padding: 10px;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Apply Now
+            </button>
+          </div>
+        </div>
+      </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+          <form method="POST" action="/registerApplicant" enctype="multipart/form-data">  
+              <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Job Finder!</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <h3 class="card-text">
+                    apply in less than 1 minute
+                  </h3>
+                  <!-- Hidden field to include the jobId -->
+                  <input type="hidden" name="jobId" value="<%= job.id %>"/>
+                  <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1">Name</span>
+                      <input type="text" class="form-control" name="name" placeholder="Username" aria-label="name" aria-describedby="basic-addon1" required/>
+                  </div>
+                  <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon2">Email</span>
+                      <input type="email" class="form-control" name="email" placeholder="Email" aria-label="email" aria-describedby="basic-addon2" required/>
+                  </div>
+                  <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon3">contact</span>
+                      <input type="tel" class="form-control" name="contact" placeholder="Contact" aria-label="contact" aria-describedby="basic-addon3" required/>
+                  </div>  
+                  <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupFile01">Resume</label>
+                    <input type="file" class="form-control" name="resume" id="inputGroupFile01" accept=".pdf,.doc,.docx" required/>
+                  </div>
+                  <button type="submit" class="btn btn-primary w-100 mt-3" style="padding: 10px;">
+                    Submit
+                  </button>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary btn-lg w-25 ms-3" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary btn-lg w-25">Save Change</button>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>

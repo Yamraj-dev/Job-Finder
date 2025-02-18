@@ -1,0 +1,58 @@
+<div class="container mt-5">
+    <h2 class="text-center text-white">Post a New Job</h2>
+    <form method="POST" action="/createJob">
+      <select class="form-select mb-3" aria-label="Default select example" name="category" required>
+        <option selected>Select Job Category</option>
+        <option value="Tech">Tech</option>
+        <option value="Non-Tech">Non-Tech</option>
+      </select>
+      <select class="form-select mb-3" aria-label="Default select example" name="designation" required>
+        <option selected>Select Job Designation</option>
+        <option value="HR">HR</option>
+        <option value="SDE">SDE</option>
+        <option value="DevOps">DevOps</option>
+        <option value="MERN Devloper">MERN Devloper</option>
+        <option value="MEAN Devloper">MEAN Devloper</option>
+        <option value="JAVA Devloper">JAVA Devloper</option>
+        <option value="Front-end Devloper">Front-end Devloper</option>
+        <option value="Back-end Devloper">Back-end Devloper</option>
+        <option value="Full-stack Devloper">Full-stack Devloper</option>
+      </select>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="category" name="locat" placeholder="locat" required>
+        <label for="category">Location</label>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Company Name</span>
+        <input type="text" class="form-control" name="companyName" aria-label="Company-Name" aria-describedby="basic-addon1" required>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Enter Salary</span>
+        <input type="text" class="form-control" name="salary" required>
+        <span class="input-group-text">Total Positions</span>
+        <input type="number" class="form-control" placeholder="Total number of openings" name="openings" required>
+      </div>      
+      <div class="input-group mb-3">
+        <select class="form-select" name="skills" size="4" multiple aria-label="Multiple select example Size 4" required>
+          <option selected>Select skills required for this job</option>
+          <option value="React">React</option>
+          <option value="NodeJS">NodeJS</option>
+          <option value="Angular">Angular</option>
+          <option value="MongoDB">MongoDB</option>
+          <option value="SQL">SQL</option>
+          <option value="Express">Express</option>
+          <option value="Java">Java</option>
+          <option value="SpringBoot">SpringBoot</option>
+          <option value="AWS">AWS</option>
+          <option value="C++">C++</option>
+          <option value="Data Structures & Algo">Data Structures & Algo</option>
+        </select>
+        <span class="input-group-text">
+          Apply By
+        </span>
+        <input type="date" class="form-control" name="dmy" required>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Post Job</button>
+    </form>
+</div>
+  

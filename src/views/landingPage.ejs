@@ -1,0 +1,74 @@
+<div class="container-fluid d-flex justify-content-center align-items-center m-0 vh-100">
+    <div class="container-fluid mx-5">
+        <h1 class="text-white">A comprehensive platform for reliable</h1>
+        <h2 class="text-white">
+            <span id="typingText" aria-live="polite"></span><span class="cursor">|</span>
+        </h2>
+        <h4 class="text-white d-inline">Get Discovered. Get Hired.</h4><br><br>
+        <% if(!userEmail) { %>
+        <a href="/jobList" class="btn btn-outline-light btn-lg me-2">
+        I'm A Job Seeker
+        </a>
+        <button type="button" class="btn btn-outline-light btn-lg me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            I'm Recruiter
+        </button>
+        <% }else{ %>
+            <a href="/jobList" class="btn btn-outline-light btn-lg me-2">
+                Job Listing
+            </a>
+            <a href="/createJob" class="btn btn-outline-light btn-lg me-2">
+                Creat a Job
+            </a>
+        <% } %>
+    </div>
+    <div class="container-fluid mx-5">
+        <img src="https://easily-deploy.onrender.com/images/banner.png" class="img-fluid" alt="banner.png">
+    </div>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <form method="POST" action="/register">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Experience Job Finder!</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Name</span>
+                        <input type="text" class="form-control" name="name" placeholder="Username" aria-label="name" aria-describedby="basic-addon1" required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon2">Email</span>
+                        <input type="email" class="form-control" name="email" placeholder="Email" aria-label="email" aria-describedby="basic-addon2" required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon3">Password</span>
+                        <input type="password" class="form-control" name="password" placeholder="Password" aria-label="password" aria-describedby="basic-addon3" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#">
+                        <img src="https://cdn-icons-png.flaticon.com/128/174/174855.png" class="img-fluid icon" alt="insta img">
+                    </a>
+                    <a href="#">
+                        <img src="https://cdn-icons-png.flaticon.com/128/733/733579.png" class="img-fluid icon" alt="twitter img">
+                    </a>
+                    <a href="#">
+                        <img src="https://cdn-icons-png.flaticon.com/128/3670/3670051.png" class="img-fluid icon" alt="whatsapp img">
+                    </a>
+                    <a href="#">
+                        <img src="https://cdn-icons-png.flaticon.com/128/14463/14463701.png" class="img-fluid icon" alt="face book img">
+                    </a>
+                    <a href="#">
+                        <img src="https://cdn-icons-png.flaticon.com/128/14715/14715341.png" class="img-fluid icon" alt="linkdin img">
+                    </a>
+                    <button type="button" class="btn btn-secondary btn-lg w-25 ms-5" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary btn-lg w-25">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

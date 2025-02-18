@@ -1,0 +1,35 @@
+<div class="container-fluid d-flex justify-content-around">
+  <% if (jobs.length > 0) { %>
+    <% jobs.forEach(job => { %>
+        <div class="card border border-white mt-3 mb-3 mx-3" style="width: 18rem;">
+            <div class="card-body">
+                <div class="d-flex align-items-center justify-content-start">
+                    <h5 class="mb-0 text-success me-1">Actively hiring</h5>
+                    <i class="fa-solid fa-arrow-trend-up ms-2 text-success"></i>
+                </div>
+                <h3 class="card-title mt-2"><%= job.companyName %></h3>
+                <p class="card-text"><%= job.category %> | <%= job.designation %></p>
+                <h3 class="card-text invisible"><%= job.id %></h3>
+                <p class="card-text">
+                  <i class="fa-solid fa-location-dot" style="color: #000000;"></i>
+                  <%= job.locat %>
+                </p>
+                <p class="card-text">
+                  <i class="fa-solid fa-indian-rupee-sign" style="color: #000000;"></i>
+                  <%= job.salary %>
+                </p>
+                <% if (job.skills && job.skills.length > 0) { %>
+                  <% job.skills.forEach(skill => { %>
+                    <span class="badge bg-secondary me-1"><%= skill %></span>
+                  <% }); %>
+                <% } else { %>
+                  <p class="text-white">No Skills Required.</p>
+                <% } %>
+                <a href="/jobdetails/<%= job.id %>" class="btn btn-primary w-100 mt-3" style="padding: 10px;">View details</a>
+            </div>
+        </div>
+    <% }); %>
+  <% } else { %>
+    <p class="text-white">No jobs available at the moment.</p>
+  <% } %>
+</div>
