@@ -1,33 +1,59 @@
-Job Finder 🏢💼
-A Job Finder web application built with Node.js, Express.js, and EJS, allowing users to register as Recruiters or Job Seekers.
+# 💼 Job Finder
 
-🚀 Features
-✅ User Authentication – Register & Login (stores name & email in Local Storage, MongoDB integration planned)
-✅ Recruiter Dashboard – Post job listings, view applicants, and access their resumes
-✅ Job Seeker Dashboard – Apply for jobs and upload resumes (Resume upload feature needs improvements)
-✅ File Upload – Resume handling with Multer
+A web application where **Recruiters** can post jobs and **Job Seekers** can apply for them. Built using **Node.js**, **Express**, and **EJS**, it includes file upload capabilities for resumes via **Multer**.
 
-📌 Tech Stack
-Backend: Node.js, Express.js
-Frontend: EJS, CSS
-Storage: Local Storage (MongoDB planned)
-File Uploads: Multer
-🛠 Future Improvements
-🔹 Fix the resume upload issue for job seekers
-🔹 Integrate MongoDB for better data management
-🔹 Improve UI and add more features
+---
 
-💻 How to Run the Project
+## 🚀 Features
 
-Clone this repository
-git clone https://github.com/yourusername/job-finder.git
-cd job-finder
+- ✅ **User Authentication**
+  - Register and login (currently stores name/email in Local Storage)
+  - MongoDB integration planned for future
 
-Install dependencies
+- 👔 **Recruiter Dashboard**
+  - Post job listings  
+  - View applicants and access uploaded resumes
+
+- 👨‍💻 **Job Seeker Dashboard**
+  - View job listings
+  - Apply for jobs and upload resume (in-progress)
+
+- 📎 **Resume Upload (Multer)**
+  - File upload logic is implemented, but improvements are planned
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer     | Tools Used                   |
+|-----------|------------------------------|
+| **Backend** | Node.js, Express.js          |
+| **Frontend**| EJS, HTML, Tailwind CSS      |
+| **File Upload** | Multer for resume handling |
+| **Storage** | Currently: Local Storage (MongoDB integration coming) |
+
+---
+
+## 🚧 Future Improvements
+
+- 🔧 Fix resume upload feature (Multer bug)
+- 🗃 Integrate MongoDB for persistent job and user data
+- 🎨 Improve UI/UX and add role-based dashboards
+
+---
+
+## 💻 How to Run Locally
+
+```bash
+# Clone the repo
+git clone https://github.com/Yamraj-dev/Job-Finder.git
+cd Job-Finder
+
+# Install dependencies
 npm install
 
-Start the server
+# Start the server
 node index.js
 
-Open http://localhost:3000 in your browser
-🚀 Contributions & feedback are welcome! Let me know if you have any suggestions.
+# Visit in your browser
+http://localhost:3000
