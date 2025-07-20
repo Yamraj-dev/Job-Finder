@@ -57,3 +57,6 @@ node index.js
 
 # Visit in your browser
 http://localhost:3000
+
+# Live on
+https://job-finder-backend-o82a.onrender.com/
